@@ -33,9 +33,10 @@ export default function Home() {
       <main>
         <Head>
           <title>Random Fox Generator</title>
-          <meta name="description" content="Fox images generated randomly" />
+          <meta name="description" content="Lazy loaded fox images which are generated randomly" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <h1 className="text-3xl font-bold">Random Fox Generator</h1> 
         <div className="m-4">
           <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
             Add new fox
