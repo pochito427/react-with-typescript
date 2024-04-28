@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MouseEventHandler } from "react";
+import Head from "next/head";
 import { LazyImage } from "@/components/LazyImage";
 
 export default function Home() {
@@ -28,17 +29,24 @@ export default function Home() {
  };
 
   return (
-    <main>
-      <div className="m-4">
-        <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-          Add new fox
-        </button>
-      </div>
-      {images.map(({ id, url }) => (
-        <div className="p-4" key={id}>
-          <LazyImage src={url} width="320" height="auto" title="Random Fox" alt="Random Fox" className="mx-auto rounded-md bg-gray-300" />
+    <div>
+      <main>
+        <Head>
+          <title>Random Fox Generator</title>
+          <meta name="description" content="Fox images generated randomly" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className="m-4">
+          <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Add new fox
+          </button>
         </div>
-      ))}
-    </main>
+        {images.map(({ id, url }) => (
+          <div className="p-4" key={id}>
+            <LazyImage src={url} width="320" height="auto" title="Random Fox" alt="Random Fox" className="mx-auto rounded-md bg-gray-300" />
+          </div>
+        ))}
+      </main>
+    </div>
   );
 }
