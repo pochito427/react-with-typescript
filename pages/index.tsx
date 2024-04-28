@@ -34,7 +34,7 @@ export default function Home() {
         <Head>
           <title>Random Fox Generator</title>
           <meta name="description" content="Lazy loaded fox images which are generated randomly" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/fox.ico" />
         </Head>
         <h1 className="text-3xl font-bold">Random Fox Generator</h1> 
         <div className="m-4">
