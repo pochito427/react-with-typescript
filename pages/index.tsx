@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MouseEventHandler } from "react";
-import { RandomFox } from "@/components/RandomFox";
+import { LazyImage } from "@/components/LazyImage";
 
 export default function Home() {
 
@@ -29,12 +29,14 @@ export default function Home() {
 
   return (
     <main>
-      <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-        Add new fox
-      </button>
+      <div className="m-4">
+        <button onClick={addNewFox} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          Add new fox
+        </button>
+      </div>
       {images.map(({ id, url }) => (
         <div className="p-4" key={id}>
-          <RandomFox image={url} />
+          <LazyImage src={url} width="320" height="auto" title="Random Fox" alt="Random Fox" className="mx-auto rounded-md bg-gray-300" />
         </div>
       ))}
     </main>
